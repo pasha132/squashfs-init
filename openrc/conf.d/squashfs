@@ -1,0 +1,14 @@
+# default parameters
+## persistent storage for sqfs images
+sqfs="/var/tmp/sqfs"
+chmod="0755"
+## mksquashfs parameters
+mkopts="-no-duplicates -comp zstd -noappend -no-exports -no-recovery"
+## where to store overlayfs upperdir and workdir
+root="/dev/shm/.overlayfs"
+
+# overlay for /usr/portage
+## lowerdir
+src_portage="/usr/portage/"
+root_portage="/tmp/.overlayfs"
+chown_portage="portage:portage"
